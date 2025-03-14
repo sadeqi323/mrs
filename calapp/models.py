@@ -7,9 +7,13 @@ class CalIn(models.Model):
     amount = models.IntegerField()
     date = models.DateTimeField()
     user = models.ForeignKey(User,on_delete=models.CASCADE)
-
+    def __str__(self):
+        return f"{self.date}-{self.amount}"
+    
 class CalOut(models.Model):
     text = models.CharField(max_length=255)
     amount = models.IntegerField()
     date = models.DateTimeField()
     user = models.ForeignKey(User,on_delete=models.CASCADE)
+    def __str__(self):
+        return f"{self.date}-{self.amount}"
